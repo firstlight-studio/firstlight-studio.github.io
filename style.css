@@ -238,6 +238,7 @@ footer .copy { width: 100%; font-size: .82rem; }
   .shots img { width: calc(50% - 8px); }
   .shots img:nth-child(even) { margin-top: 0; }
   .shots img:last-child { width: calc(50% - 8px); }
+}
 .dts-caps p { font-family: var(--round); }
 @media (max-width: 520px) {
   .card-in { gap: 12px; padding: 0 16px 0 10px; }
