@@ -25,11 +25,17 @@
 
     function layout() {
       var w = pin.clientWidth, h = pin.clientHeight, mob = w < 760 || w / h < .9;
-      var H = mob ? Math.min(h * .52, 520, w * 1.1) : Math.min(h * .68, 620), W = H * .5;
-      var cx = w / 2, cy = mob ? h * .58 : h * .5;
-      var R = mob ? Math.min(w * .25, 120) : Math.min(W * .66, (w - W) / 2 * .5, 230);
+      var navB = document.querySelector('.nav').offsetHeight;
+      var R = mob ? Math.min(w * .22, 100) : 0, ry = 0, H, cy;
+      if (mob) {
+        // toits juste sous le menu, puis le trajet de l'enfant, puis le téléphone ; la légende garde le bas
+        ry = navB + 16 + R * .5;
+        var top = ry + R * .78;
+        H = Math.max(260, Math.min(h - 96 - top, w * 1.25, 560)); cy = top + H / 2;
+      } else { H = Math.min(h * .68, 620); cy = h * .5; }
+      var W = H * .5, cx = w / 2;
+      if (!mob) { R = Math.min(W * .66, (w - W) / 2 * .5, 230); ry = cy - H * .1; }
       var off = mob ? w * .25 : W / 2 + Math.max(R * .95, Math.min((w - W) / 4.4, 250));
-      var ry = mob ? Math.max(76 + R * .3, (76 + cy - H / 2) / 2 - R * .12) : cy - H * .1;
       var RF = mob ? Math.min(w * .42, 220) : Math.min(h * .38, 380, w * .4), ly = h * (mob ? .53 : .47) - RF * .22;
       L = { w: w, h: h, H: H, W: W, cx: cx, cy: cy, R: R, ry: ry, dy: ry + R * .506, bx: cx - off, ox: cx + off,
             RF: RF, ly: ly, lbx: cx - RF * .3256, lox: cx + RF * .3256, ldy: ly + RF * .506 };
@@ -39,7 +45,7 @@
       dot.style.width = dot.style.height = (S * .2666) + 'px';
       [glowB, glowO].forEach(function (el) { el.style.width = el.style.height = (S * 2) + 'px'; });
       // trajet du changement de maison : une courbe douce sous les toits, qui passe devant l'écran
-      var low = L.dy + (mob ? Math.min(R * .5, cy - H / 2 - L.dy - R * .2) : H * .1);
+      var low = L.dy + (mob ? Math.max(4, Math.min(R * .5, cy - H / 2 - L.dy - R * .12)) : H * .1);
       L.cyq = 2 * low - L.dy;
       trail.setAttribute('d', 'M' + L.ox + ' ' + L.dy + ' Q' + cx + ' ' + L.cyq + ' ' + L.bx + ' ' + L.dy);
       trailLen = trail.getTotalLength() || 1;
@@ -84,7 +90,7 @@
       var ph = io(seg(p, FIN[0] - .03, FIN[0] + .04));
       phone.style.transform = 'translate3d(' + (L.cx - L.W / 2).toFixed(1) + 'px,' + (L.cy - L.H / 2 + (1 - e) * L.H * .14 + ph * L.H * .08).toFixed(1) + 'px,0)' +
         ' rotateX(' + lerp(16, 3, e).toFixed(2) + 'deg) rotateY(' + lerp(-16, 9, turn).toFixed(2) + 'deg) scale(' + (lerp(.9, 1, e) * lerp(1, .88, ph)).toFixed(4) + ')';
-      phone.style.opacity = e * (1 - ph);
+      phone.style.opacity = 1 - ph;
       phone.style.setProperty('--sh', lerp(-60, 60, turn).toFixed(1) + '%');
 
       // l'écran : un jour par étape, le sac la veille, « Chez Papa » à l'arrivée

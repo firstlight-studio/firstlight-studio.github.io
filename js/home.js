@@ -98,5 +98,8 @@
     }
 
     Scene(sec, { layout: layout, render: render, still: 1 });
+    // « Apps » : la fin de la scène, quand les bandes sont devenues les cartes
+    function toApps() { if (location.hash === '#apps') scrollTo(0, sec.offsetTop + sec.offsetHeight - pin.clientHeight); }
+    addEventListener('load', toApps); addEventListener('hashchange', toApps);
   });
 })();

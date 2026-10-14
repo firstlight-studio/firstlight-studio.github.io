@@ -2,7 +2,7 @@
    titres en arrondi (SF Pro Rounded sur iPhone et Mac), comme le trait des apps. */
 :root {
   --night: #221f57; --plum: #4a3570; --dawn: #c9806a; --gold: #f6ca5d; --amber: #e7a44c; --ember: #e2702b;
-  --cream: #fff8ee; --sand: #f8ebd8; --line: #ecdcc6; --card: #ffffff; --ink: #201d3f; --ink2: #625d7d;
+  --cream: #fff8ee; --label: #b5541a; --sand: #f8ebd8; --line: #ecdcc6; --card: #ffffff; --ink: #201d3f; --ink2: #625d7d;
   --round: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --sans: system-ui, -apple-system, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --w: 1120px; --ease: cubic-bezier(.16, 1, .3, 1); --sun: linear-gradient(180deg, #f6ca5d, #e7a44c);
@@ -22,10 +22,10 @@ h3 { font-size: 1.25rem; letter-spacing: -.015em; }
 p { margin: 0 0 1em; }
 .wrap { max-width: var(--w); margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
 @media (min-width: 760px) { .wrap { padding-left: 40px; padding-right: 40px; } }
-.eyebrow { display: inline-block; font: 700 .74rem/1 var(--round); letter-spacing: .2em; text-transform: uppercase; color: var(--amber); margin-bottom: 14px; }
+.eyebrow { display: inline-block; font: 700 .74rem/1 var(--round); letter-spacing: .2em; text-transform: uppercase; color: var(--label); margin-bottom: 14px; }
 .lead { font-size: 1.18rem; color: var(--ink2); max-width: 620px; }
 .muted { color: var(--ink2); }
-section { padding: clamp(72px, 11vw, 128px) 0; }
+section { padding: clamp(64px, 9vw, 112px) 0; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
 /* boutons */
@@ -130,21 +130,22 @@ footer .copy { width: 100%; font-size: .82rem; }
 .app-hero { padding-top: calc(120px + env(safe-area-inset-top, 0px)); padding-bottom: 72px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 40px; align-items: center; }
 .app-hero > img { width: 148px; height: 148px; border-radius: 23%; box-shadow: 0 24px 50px -18px rgba(32, 29, 63, .45); view-transition-name: dt-icon; }
 @media (max-width: 680px) { .app-hero { grid-template-columns: minmax(0, 1fr); gap: 24px; } .app-hero > img { width: 108px; height: 108px; } }
-.pill { display: inline-block; padding: 13px 22px; border-radius: 99px; background: var(--night); color: #fff; font: 600 .98rem/1 var(--round); }
+.pill { display: inline-flex; align-items: center; gap: 8px; padding: 13px 20px; border-radius: 99px; background: rgba(34, 31, 87, .07); color: var(--night); font: 600 .98rem/1 var(--round); }
+.pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .grid { grid-template-columns: minmax(0, 1fr); } }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 26px; }
 .card p { margin: 0; }
-.alt { background: var(--sand); }
-.prose { max-width: 720px; }
+.alt { background: linear-gradient(180deg, var(--cream), var(--sand) 14%, var(--sand) 86%, var(--cream)); }
+.prose { max-width: 760px; margin: 0 auto; }
 .prose h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-top: 1.6em; }
 .prose h2:first-of-type { margin-top: 0; }
 .prose a { color: var(--ember); }
 .cap.c3 .h { font-size: clamp(2rem, 5vw, 3.6rem); margin: 0 auto; max-width: 860px; }
 
 /* ---------- Deux Toits : la semaine entre deux toits (reprise de Hearthold, calques en HTML pour la carte graphique) ---------- */
-.dts { position: relative; height: 460vh; padding: 0; background: linear-gradient(180deg, #fff7ea 0, #fbe6c6 60%, #f9ddb2 100%); }
+.dts { position: relative; height: 460vh; padding: 0; background: linear-gradient(180deg, var(--cream) 0, #fbe6c6 30%, #f9ddb2 70%, var(--cream) 100%); }
 .dts .pin { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; perspective: 1600px; }
 .dts.static { height: auto; }
 .dts.static .pin { position: relative; }
