@@ -10,21 +10,72 @@
 <meta property="og:image" content="https://firstlight-studio.github.io/img/og.png">
 <link rel="icon" href="img/first-light.svg?v=1" type="image/svg+xml">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=1">
-<link rel="stylesheet" href="style.css?v=3">
-<script src="js/site.js?v=2"></script>
+<link rel="stylesheet" href="style.css?v=4">
+<script src="js/site.js?v=3"></script>
+<script src="js/lulu-doku.js?v=1" defer></script>
 </head>
 <body>
 <header class="nav"></header>
-<main>
-<div class="wrap app-hero">
-  <img src="img/lulu-doku-icon.png" alt="Lulu Doku" width="148" height="148">
-  <div>
-    <span class="eyebrow">Lulu × First Light</span>
-    <h1>Lulu Doku</h1>
-    <p class="lead">Le casse-tête du matin. Placez une Lulu par ligne, par colonne et par zone, sans que deux Lulu se touchent. Une nouvelle grille chaque matin, la même pour tout le monde, et des chapitres sans fin.</p>
-    <div class="btns"><span class="pill">Bientôt sur l'App Store</span><a class="btn" href="#aide">Aide et confidentialité</a></div>
+<main class="ld">
+<section class="ld-hero" aria-label="Lulu Doku">
+  <i class="ld-tile" style="width:54px;height:54px;background:#ffa595;top:18%;left:4%" aria-hidden="true"></i>
+  <i class="ld-tile" style="width:34px;height:34px;background:#ffdc72;top:70%;left:44%;animation-delay:-3s" aria-hidden="true"></i>
+  <i class="ld-tile" style="width:42px;height:42px;background:#aee38f;top:12%;right:6%;animation-delay:-5s" aria-hidden="true"></i>
+  <i class="ld-tile" style="width:28px;height:28px;background:#cfa9ff;bottom:8%;right:12%;animation-delay:-7s" aria-hidden="true"></i>
+  <div class="wrap">
+    <div>
+      <div class="ld-id"><img src="img/lulu-doku-icon.png" alt="" width="84" height="84"><span class="eyebrow">Un jeu Lulu × First Light</span></div>
+      <h1>Lulu <span>Doku</span></h1>
+      <p class="lead">Le casse-tête du matin. Une grille de logique par jour, la même pour tout le monde, à résoudre avec Lulu en quelques minutes. Puis des chapitres sans fin, pour le plaisir.</p>
+      <ul class="ld-rules">
+        <li><b>1</b><span>Une Lulu par ligne et par colonne.</span></li>
+        <li><b>2</b><span>Une Lulu par zone de couleur.</span></li>
+        <li><b>3</b><span>Deux Lulu ne se touchent jamais, même en diagonale.</span></li>
+      </ul>
+      <div class="btns"><span class="pill">Bientôt sur l'App Store</span><a class="btn" href="#aide">Aide et confidentialité</a></div>
+    </div>
+    <div class="ld-play" id="jouer">
+      <div class="ld-play-head"><div><b>Essaie, là, tout de suite</b><small>Touchez une case pour une croix, deux fois pour Lulu.</small></div><span class="ld-hearts" aria-label="Trois cœurs">❤️❤️❤️</span></div>
+      <div class="ld-board" role="grid" aria-label="Grille de démonstration, 6 cases sur 6"></div>
+      <div class="ld-help"><span class="ld-msg" aria-live="polite">Place 6 Lulu.</span><button type="button" class="ld-reset">Recommencer</button></div>
+      <div class="ld-win" aria-live="polite"><span class="ld-win-lulu"></span><b>Bravo !</b><p>Tu as tout compris. Dans l'app, une nouvelle grille t'attend chaque matin à 6 h.</p><button type="button" class="btn solid ld-reset">Rejouer</button></div>
+    </div>
   </div>
-</div>
+</section>
+
+<section class="ld-feats"><div class="wrap">
+  <div class="title"><span class="eyebrow">Dans le jeu</span><h2>Cinq minutes de logique, un vrai moment à soi</h2></div>
+  <div class="grid">
+    <div class="card"><i style="background:#fff0d6">☀️</i><h3>La grille du matin</h3><p class="muted">Chaque jour à 6 h, une nouvelle grille, la même pour tout le monde. Un peu plus corsée le week-end. Enchaînez les jours pour faire grandir votre série.</p></div>
+    <div class="card"><i style="background:#ffe4de">🐶</i><h3>Lulu vous explique</h3><p class="muted">Bloqué ? Lulu vous montre la prochaine déduction et vous explique pourquoi. Jamais besoin de deviner : chaque grille se résout par la logique.</p></div>
+    <div class="card"><i style="background:#e6f6dc">📚</i><h3>Des chapitres sans fin</h3><p class="muted">Des grilles de 5 × 5 à 9 × 9, vingt par chapitre, avec des respirations plus faciles et un défi de Lulu tous les dix niveaux.</p></div>
+    <div class="card"><i style="background:#e8ecff">🏆</i><h3>Défiez vos amis</h3><p class="muted">Partagez votre temps et une jolie carte de résultat. Vos amis font la même grille du matin : le plus rapide gagne.</p></div>
+    <div class="card"><i style="background:#f1e6ff">🌙</i><h3>De jour comme de nuit</h3><p class="muted">Clair et doré le matin, bleu nuit le soir, ou le thème que vous préférez. Trois palettes de couleurs et un mode pour les daltoniens.</p></div>
+    <div class="card"><i style="background:#fff3e2">🎁</i><h3>Gratuit, pour de vrai</h3><p class="muted">Tout le jeu est gratuit. Quelques pubs entre les parties, qu'un achat unique retire pour toujours. Aucun abonnement.</p></div>
+  </div>
+</div></section>
+
+<section class="ld-night"><div class="wrap ld-split">
+  <div>
+    <span class="eyebrow">Le matin, une grille. Le soir, une revanche.</span>
+    <h2>Partagez votre temps, sans rien dévoiler</h2>
+    <p class="lead">Votre résultat se partage en couleurs, comme un petit tableau : vos amis voient votre temps et la forme de la grille, jamais la solution.</p>
+    <div class="ld-share" aria-label="Exemple de partage">Lulu Doku 🐶 N° 2
+⏱️ 1:04 · ❤️❤️❤️ · 🔥 6
+🟥🟥🟥🟨🟨🟨
+🟥🟥🟥🟨🟩🟩
+🟥🟥🟨🟨🟩🟩
+🟥🟦🟨🟨🟪🟧
+🟥🟦🟦🟦🟪🟪
+🟦🟦🟪🟪🟪🟪</div>
+  </div>
+  <div class="ld-phones"><img src="img/lulu-doku-1.webp" alt="L'accueil de Lulu Doku, de jour" width="480" height="1039" loading="lazy"><img src="img/lulu-doku-5.webp" alt="L'accueil de Lulu Doku, de nuit" width="480" height="1039" loading="lazy"></div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="title"><span class="eyebrow">Un aperçu</span><h2>Une grille, Lulu, et rien qui ne vous presse</h2></div>
+  <div class="shots"><img src="img/lulu-doku-1.webp" alt="" width="480" height="1039" loading="lazy"><img src="img/lulu-doku-2.webp" alt="" width="480" height="1039" loading="lazy"><img src="img/lulu-doku-3.webp" alt="" width="480" height="1039" loading="lazy"><img src="img/lulu-doku-4.webp" alt="" width="480" height="1039" loading="lazy"><img src="img/lulu-doku-5.webp" alt="" width="480" height="1039" loading="lazy"></div>
+</div></section>
 
 <section id="aide"><div class="wrap prose">
   <span class="eyebrow">Aide</span>
