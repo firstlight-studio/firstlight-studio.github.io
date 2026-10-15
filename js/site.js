@@ -14,8 +14,8 @@
     document.querySelector('footer').innerHTML = '<div class="wrap" id="contact">' +
       '<div><a class="brand" href="./"><img src="img/first-light.svg" alt="" width="30" height="30">First Light</a>' +
       '<p style="max-width:340px;margin:0">Des apps claires pour le travail et le quotidien. Un studio <a href="https://hearthold-studio.github.io/">Hearthold</a>, en France.</p></div>' +
-      '<div class="cols"><div><h4>Apps</h4><a href="deux-toits.html">Deux Toits</a></div>' +
-      '<div><h4>Contact</h4><a href="mailto:moonbeamstudio.contact@gmail.com">moonbeamstudio.contact@gmail.com</a><a href="deux-toits.html#aide">Aide Deux Toits</a></div>' +
+      '<div class="cols"><div><h4>Apps</h4><a href="deux-toits.html">Deux Toits</a><a href="lulu-doku.html">Lulu Doku</a></div>' +
+      '<div><h4>Contact</h4><a href="mailto:moonbeamstudio.contact@gmail.com">moonbeamstudio.contact@gmail.com</a><a href="deux-toits.html#aide">Aide Deux Toits</a><a href="lulu-doku.html#aide">Aide Lulu Doku</a></div>' +
       '<div><h4>La maison</h4><a href="https://hearthold-studio.github.io/">Hearthold</a><a href="https://moonbeamstudio.github.io/">Moon Beam Studio</a><a href="https://hearthold-studio.github.io/legal.html">Mentions légales</a></div></div>' +
       '<p class="copy">© 2026 First Light · Hearthold · Fait en France</p></div>';
 
